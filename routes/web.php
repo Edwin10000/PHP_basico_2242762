@@ -33,8 +33,39 @@ Route::get('arreglos' , function(){
     //Arreglo: estructura de datos
     $estudiantes = [ "AN" => 'Ana' ,
                      'MA' => "Maria" ,
-                     'JO' => 'Jorge' ];
+                     'JO' => 1 ];
     echo "<pre>";
     var_dump($estudiantes);
     echo '</pre>';
+});
+
+Route::get("paises" , function(){
+
+    $paises= [  "Colombia" => [
+        "capital" => "Bogota",
+        "moneda" => "Peso",
+        "poblacion" => 51
+
+                              ],
+                "Peru" => [
+                    "capital" => "Lima",
+                    "moneda" => "Sol",
+                    "poblacion" => 32.8
+                          ],
+                "Paraguay" => [
+                    "capital" => "Asuncion",
+                    "moneda" => "Guarani",
+                    "poblacion" => 7.3
+
+                    ]];
+$suma = 0;
+    foreach($paises as $nombre => $pais){
+        $suma += $pais["poblacion"];
+    }
+
+    echo "La suma de los paises es $suma";
+
+    echo "<pre>";
+    print_r($paises["Colombia"]["poblacion"]);
+    echo "</pre>";
 });
