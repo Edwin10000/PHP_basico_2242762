@@ -41,7 +41,7 @@ Route::get('arreglos' , function(){
 
 Route::get("paises" , function(){
 
-    $paises= [  "Colombia" => [
+    $paises= ["Colombia" => [
         "capital" => "Bogota",
         "moneda" => "Peso",
         "poblacion" => 51
@@ -58,14 +58,12 @@ Route::get("paises" , function(){
                     "poblacion" => 7.3
 
                     ]];
-$suma = 0;
-    foreach($paises as $nombre => $pais){
-        $suma += $pais["poblacion"];
-    }
 
-    echo "La suma de los paises es $suma";
-
-    echo "<pre>";
-    print_r($paises["Colombia"]["poblacion"]);
-    echo "</pre>";
+    //llamar a una vista
+    //con datos de paises
+    return view('paises')->with("naciones" , $paises);
 });
+
+Route::get('formulario_buscador', "MetabuscadorController@formulario_buscador");
+
+Route::POST('buscar', "MetabuscadorController@buscar");
