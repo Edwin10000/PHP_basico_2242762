@@ -32,6 +32,24 @@ class MetabuscadorController extends Controller
          case 4:
                 return redirect()->to("https://espanol.search.yahoo.com/search?p=$termino");
                 break;
+         case 5:
+                    return redirect()->to("https://yandex.com/search/?text=$termino");
+                    break;
+         case 6:
+                        return redirect()->to("https://es.ask.com/web?q=$termino");
+                        break;
+         case 7:
+                            return redirect()->to("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=$termino");
+                            break;
+        case 8:
+                                return redirect()->to("https://www.ecosia.org/search?q=$termino");
+                                break;
+        case 9:
+                                    return redirect()->to("https://www.youtube.com/results?search_query=$termino");
+                                    break;
+        case 10:
+                                        return redirect()->to("https://search.seznam.cz/?q=$termino");
+                                        break;
     }
     //print_r($_POST);
     }}
